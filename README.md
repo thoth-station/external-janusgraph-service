@@ -16,7 +16,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-        - role: thoth-station.external-janusgraph
+        - role: thoth-station.external_janusgraph_service
           janusgraph_server_ip_address: 10.10.10.10
           namespace: thoth-test-core
 

@@ -1,0 +1,46 @@
+---
+- name: Create a Service object for external JanusGraph Server
+  k8s:
+    verify_ssl: no
+    state: present
+    definition:
+      apiVersion: "v1"
+      kind: "Service"
+      metadata:
+        name: "janusgraph-external"
+        namespace: "{{ namespace }}"
+        labels:
+          app: "thoth"
+          service: "janusgraph"
+      selector: {}
+      spec:
+          ports:
+            -
+              name: "janusgraph"
+              protocol: "TCP"
+              port: 8182
+              nodePort: 0
+
+- name: Create an Endpoint for external JanusGraph Server
+  k8s:
+    verify_ssl: no
+    state: present
+    definition:
+      kind: "Endpoints"
+      apiVersion: "v1"
+      metadata:
+        name: "janusgraph-external"
+        namespace: "{{ namespace }}"
+        labels:
+          app: "thoth"
+          service: "janusgraph"
+      subsets: 
+        -
+          addresses:
+            -
+              ip: "{{ janusgraph_server_ip_address }}"
+          ports:
+            -
+              name: "janusgraph"
+              protocol: "TCP"
+              port: 8182

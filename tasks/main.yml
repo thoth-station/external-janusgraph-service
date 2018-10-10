@@ -7,7 +7,7 @@
       apiVersion: "v1"
       kind: "Service"
       metadata:
-        name: "janusgraph-external"
+        name: "janusgraph"
         namespace: "{{ namespace }}"
         labels:
           app: "thoth"
@@ -29,7 +29,7 @@
       kind: "Endpoints"
       apiVersion: "v1"
       metadata:
-        name: "janusgraph-external"
+        name: "janusgraph"
         namespace: "{{ namespace }}"
         labels:
           app: "thoth"

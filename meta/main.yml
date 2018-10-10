@@ -1,7 +1,7 @@
 galaxy_info:
   author: Christoph Görn
   description: This role will create an OpenShift Service object to integrate an external JanusGraph Server.
-  company: Red Hat
+  company: Red Hat Inc., the Office of the CTO
 
   license: GPLv3
 
@@ -15,5 +15,7 @@ galaxy_info:
   galaxy_tags:
     - thoth
     - janusgraph
+    - aistacks
+    - development
 
 dependencies: []

@@ -1,6 +1,8 @@
 Thoth: external JanusGraph Service
 ==================================
 
+*OBSOLETED* This role is no longer used by Project Thoth, we have migrated the knowledge graph to Dgraph.
+
 This role will create an OpenShift Service object to integrate an external JanusGraph Server.
 
 Role Variables
